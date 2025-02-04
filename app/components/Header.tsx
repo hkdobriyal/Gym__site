@@ -49,8 +49,7 @@ function Header() {
             Home
           </Link>
           <Link
-            // href="/about"
-            href="/"
+            href="/about"           
             className={`hover:text-green-400 ${
               usePathname() === "/about" ? "text-green-400" : ""
             } duration-300 ease-linear`}
@@ -82,8 +81,8 @@ function Header() {
             Blog
           </Link> */}
           <Link
-            // href="/contact"
-            href="/"
+            href="/contact"
+            // href="/"
             className={`hover:text-green-400 ${
               usePathname() === "/contact" ? "text-green-400" : ""
             } duration-300 ease-linear`}
