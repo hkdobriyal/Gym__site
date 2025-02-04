@@ -26,7 +26,7 @@ function Form({ register }: { register?: boolean }) {
             <input
               type="email"
               id="email"
-              placeholder="gymate@gmail.com"
+              placeholder="your email"
               className="py-2 px-4 text-black"
             />
           </div>
@@ -48,7 +48,7 @@ function Form({ register }: { register?: boolean }) {
           </button>
         </div>
         <div className="flex flex-col gap-3 items-center">
-          <p>{register ? "Already have an account?" : "New to Gymate?"}</p>
+          <p>{register ? "Already have an account?" : "New to M&H?"}</p>
           <Link
             href={register ? "/login" : "/register"}
             className="text-[#ff0336] font-bold"

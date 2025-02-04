@@ -1,11 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import hero from "public/images/hero/bg.jpg";
 
 function Hero() {
   return (
     <section id="hero">
-      <div className="h-[130vh] bg-[url('/images/hero/bg.jpg')] bg-[30%_30%]  bg-cover  flex justify-center items-center text-white p-8">
+      <div 
+       style={{ backgroundImage: `url(${hero.src})` }}
+      className="h-[130vh]  bg-[30%_30%]  bg-cover  flex justify-center items-center text-white p-8">
       <div className="absolute inset-0 h-[130vh] bg-black bg-opacity-50"></div>
         <div className="hidden lg:flex gap-4 flex-row-reverse -rotate-90 text-white absolute top-2/4 -right-8 items-center">
           {/* <p className="uppercase text-xl font-bold tracking-widest">share</p> */}

@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import bg from "public/images/logo/logo-black.png";
+
 
 function Footer() {
   return (
@@ -10,7 +12,7 @@ function Footer() {
           <div className="space-y-4">
             <div>
               <Image
-                src="/images/logo/logo-black.png"
+                src={bg}
                 alt="logo"
                 width={160}
                 height={160}
@@ -52,24 +54,24 @@ function Footer() {
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
           <div className="space-y-6">
             <div className="relative">
-              <h1 className="font-bold text-2xl">Our Classes</h1>
+              <h1 className="font-bold text-2xl">Supplement Category </h1>
               <span className="top-8 left-[5.75rem] lg:left-0 absolute w-16 h-[4px] bg-blu"></span>
             </div>
             <div className="flex flex-col gap-4 items-center lg:items-baseline">
               <Link href="/" className="hover:text-blu hover:font-bold">
-                Fitness Classes
+              Protein Supplements
               </Link>
               <Link href="/" className="hover:text-blu hover:font-bold">
-                Aerobics Classes
+              Amino Acids (BCAA & EAA)
               </Link>
               <Link href="/" className="hover:text-blu hover:font-bold">
-                Power Yoga
+              Pre-Workout Supplements
               </Link>
               <Link href="/" className="hover:text-blu hover:font-bold">
-                Learn Machines
+              Creatine 
               </Link>
               <Link href="/" className="hover:text-blu hover:font-bold">
-                Full-body Strength
+              Multivitamins & Omega-3
               </Link>
             </div>
           </div>

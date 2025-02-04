@@ -1,6 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import arjun1 from "public/images/whychooseus/arjun1.png";
+import loc from "public/images/whychooseus/location_map.png";
+import supplement from "public/images/whychooseus/supplement.png";
+import grid3 from "public/images/whychooseus/grid-3.png";
+import grid1 from "public/images/whychooseus/grid-1.png";
+
 
 function WhyChooseUs() {
   return (
@@ -27,7 +33,7 @@ function WhyChooseUs() {
           {/* <div className="absolute bottom-11 lg:bottom-11 lg:-left-4 h-[55%] w-2.5 bg-[#47a9ff]"></div> */}
           {/* <div className="absolute -top-0 lg:top-0   right-[-1rem] h-[55%] w-2.5 bg-[#47a9ff] "></div> */}
           <Image
-            src="/images/whychooseus/arjun1.png"
+            src={arjun1}
             alt="why choose us"
             width={1000}
             height={1000}
@@ -52,7 +58,7 @@ function WhyChooseUs() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 px-12 lg:px-0">
             <div className="flex items-center gap-4">
               <Image               
-                src="/images/whychooseus/supplement.png"
+                src={supplement}
                 alt="Free Fitness Training"
                 width={70}
                 height={70}
@@ -62,7 +68,7 @@ function WhyChooseUs() {
             </div>
             <div className="flex items-center gap-4">
               <Image
-                src="/images/whychooseus/location_map.png"
+                src={loc}
                 alt="Modern Gym Equipments"
                 width={70}
                 height={70}
@@ -72,7 +78,7 @@ function WhyChooseUs() {
             </div>
             <div className="flex items-center gap-4">
               <Image
-                src="/images/whychooseus/grid-3.png"
+                src={grid3}
                 alt="Gym Bag Equipments"
                 width={70}
                 height={70}
@@ -82,7 +88,7 @@ function WhyChooseUs() {
             </div>
             <div className="flex items-center gap-4 ">
               <Image
-                src="/images/whychooseus/grid-1.png"
+                src={grid1}
                 alt="Fresh Bottle Watter"
                 width={70}
                 height={70}

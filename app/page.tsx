@@ -21,7 +21,7 @@ export default function Home() {
       <Hero />  
       <Cards />
       <WhyChooseUs />
-      <GymTrainers />
+      {/* <GymTrainers /> */}
       <Sponsors />
       <Cta />
       <Footer />

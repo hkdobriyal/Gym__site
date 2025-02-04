@@ -1,10 +1,13 @@
 import Link from "next/link";
 import React from "react";
+import bg from "public/images/cta/bg.jpg";
 
 function Cta() {
   return (
     <section id="cta">
-      <div className="bg-[url('/images/cta/bg.jpg')] px-8 py-16 bg-[50%] bg-no-repeat bg-cover mt-8">
+      <div 
+       style={{ backgroundImage: `url(${bg.src})` }}
+      className="px-8 py-16 bg-[50%] bg-no-repeat bg-cover mt-8">
         <div className="text-white flex flex-col gap-4 font-bold max-w-screen-xl m-auto">
           <h1 className="text-4xl">Need Genuine Supplements?</h1>
           <h3 className="text-2xl flex items-center gap-2">

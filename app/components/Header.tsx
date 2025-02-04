@@ -5,6 +5,7 @@ import Link from "next/link";
 import React, { useEffect, useRef } from "react";
 import { useTogglerContext } from "../context/toggler";
 import { usePathname } from "next/navigation";
+import logo from "public/images/logo/logo-black.png";
 
 function Header() {
   const { setMobileNavbar, setAboutSidebar } = useTogglerContext();
@@ -31,7 +32,7 @@ function Header() {
         <div>
           <Link href="/">
             <Image
-              src="/images/logo/logo-black.png"
+              src={logo}
               alt="logo"
               width={180}
               height={180}
@@ -48,7 +49,8 @@ function Header() {
             Home
           </Link>
           <Link
-            href="/about"
+            // href="/about"
+            href="/"
             className={`hover:text-green-400 ${
               usePathname() === "/about" ? "text-green-400" : ""
             } duration-300 ease-linear`}
@@ -80,7 +82,8 @@ function Header() {
             Blog
           </Link> */}
           <Link
-            href="/contact"
+            // href="/contact"
+            href="/"
             className={`hover:text-green-400 ${
               usePathname() === "/contact" ? "text-green-400" : ""
             } duration-300 ease-linear`}
