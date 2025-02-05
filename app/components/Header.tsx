@@ -13,9 +13,12 @@ function Header() {
 
   useEffect(() => {
     const onPageScroll = () => {
-      headerRef.current!.style.backdropFilter  =
+    // 
+    if (headerRef.current) { // ✅ Ensure ref exists before accessing style
+      headerRef.current.style.backdropFilter =
         window.pageYOffset > 20 ? "blur(10px)" : "none";
-    };
+    }
+  }
     window.addEventListener("scroll", onPageScroll);
 
     return () => {

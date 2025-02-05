@@ -1,36 +1,45 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import boy2 from "public/images/whoweare/running-boy2.png";
+import text from "public/images/whoweare/running-text.png";
+import grid1 from "public/images/whoweare-about/grid-1.png";
+import grid2 from "public/images/whoweare-about/grid-2.jpg";
+import grid3 from "public/images/whoweare-about/grid-3.jpg";
+import grid4 from "public/images/whoweare-about/grid-4.png";
 
-function WhoWeAreAbout() {
+function WhoWeAreAbout() { 
   return (
     <section id="who-we-are-about">
       <div className="px-8 py-16 space-y-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 lg:py-32 max-w-screen-xl m-auto">
           <div className="relative flex flex-col gap-6 items-center text-center lg:items-start lg:text-left">
-            <Image
+            {/* <Image
               src="/images/abstract/abstract.svg"
               alt="abstract"
               width={200}
               height={200}
               className="absolute left-[3.75rem] -top-1.5 lg:left-0"
-            />
-            <p className="text-white relative z-10 font-bold text-center lg:translate-x-10">
+            /> */}
+            <p className="text-black relative z-10 font-bold text-center text-4xl">
               WHO WE ARE
             </p>
-            <h1 className="font-bold text-4xl">
+            <h1 className="font-bold text-2xl">
               We Will Give You Strength and Health
             </h1>
             <p>
-              At Gymate, we are dedicated to helping you achieve the body of
-              your dreams. Our expert trainers and nutritionists will work with
-              you to create a personalized fitness and nutrition plan that helps
-              you reach your specific goals.
+              At MuscleAndHealth, we are committed to providing the highest quality gym
+              supplements to help you achieve your fitness goals. We offer a
+              wide range of supplements from top brands, including protein
+              powders, pre-workouts, amino acids, and more. Whether you're
+              looking to build muscle, boost endurance, or enhance recovery, our
+              premium products are designed to support your journey to peak
+              performance.
             </p>
             <div>
               <Link
-                href="/"
-                className="relative text-white flex items-center gap-2 bg-[#ff0336] font-bold px-8 py-4 after:h-[3.5rem] after:absolute after:w-[12rem] after:duration-300 after:ease-linear after:border after:border-[#ff0336] hover:after:border-[#ff0336] after:-top-3 after:-right-4 hover:after:top-0 hover:after:right-0 mt-4"
+                href="/contact"
+                className="relative text-white flex items-center gap-2 bg-blu font-bold px-8 py-4 after:h-[3.5rem] after:absolute after:w-[12rem] after:duration-300 after:ease-linear after:border after:border-blu hover:after:border-blu after:-top-3 after:-right-4 hover:after:top-0 hover:after:right-0 mt-4"
               >
                 <span>CONTACT US</span>
                 <span>
@@ -43,37 +52,37 @@ function WhoWeAreAbout() {
             <Image
               width={1000}
               height={1000}
-              src="/images/whoweare/running-girl.png"
-              alt="girl_running"
+              src={boy2}
+              alt="boy_img"
               className="absolute w-[34rem] right-[46%] top-[50%] translate-x-1/2 -translate-y-1/2 z-[5]"
             />
-            <Image
+            {/* <Image
               width={250}
               height={250}
               src="/images/whoweare/half-circle.svg"
               alt="bg-red"
               className="absolute top-[55%] left-[9.5rem] translate-x-1/2 -translate-y-1/2"
-            />
+            /> */}
             <Image
               width={80}
               height={80}
-              src="/images/whoweare/running-text.png"
+              src={text}
               alt="bg-text"
               className="absolute top-[55%] translate-x-1/2 -translate-y-1/2 right-[78%]"
             />
-            <Image
+            {/* <Image
               width={80}
               height={80}
               src="/images/whoweare/fart.png"
               alt="bg-wind"
               className="absolute right-[34%] top-[57.5%] translate-x-1/2 -translate-y-1/2"
-            />
+            /> */}
           </div>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 max-w-screen-xl m-auto">
           <div className="bg-white px-8 py-12 flex flex-col lg:justify-center items-center text-center gap-4">
             <Image
-              src="/images/whoweare-about/grid-1.png"
+              src={grid1}
               alt="history"
               width={100}
               height={100}
@@ -86,14 +95,14 @@ function WhoWeAreAbout() {
             </p>
           </div>
           <Image
-            src="/images/whoweare-about/grid-2.jpg"
+            src={grid2}
             alt="who we are"
             width={1000}
             height={1000}
             className="w-full h-full lg:h-[28rem]"
           />
           <Image
-            src="/images/whoweare-about/grid-3.jpg"
+            src={grid3}
             alt="who we are"
             width={1000}
             height={1000}
@@ -101,7 +110,7 @@ function WhoWeAreAbout() {
           />
           <div className="bg-white px-8 py-12 flex flex-col lg:justify-center items-center text-center gap-4">
             <Image
-              src="/images/whoweare-about/grid-4.png"
+              src={grid4}
               alt="history"
               width={100}
               height={100}
