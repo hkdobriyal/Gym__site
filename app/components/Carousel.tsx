@@ -48,8 +48,25 @@ import GenAI from "public/images/Carousel/GenAI.jpg";
 import DL1 from "public/images/Carousel/DL1.jpg";
 import DL2 from "public/images/Carousel/DL2.jpg";
 import DL3 from "public/images/Carousel/DL3.jpg";
+import bcaa from "public/images/Carousel/bcaa.jpg";
+import c4 from "public/images/Carousel/c4.jpg";
+import dx from "public/images/Carousel/dx.png";
+import gat from "public/images/Carousel/gat.jpg";
+import gnc2 from "public/images/Carousel/gnc2.jpg";
+import gnc1 from "public/images/Carousel/gnc1.png";
+import kl from "public/images/Carousel/kl.jpg";
+import mp from "public/images/Carousel/mp.jpg";
+import nt from "public/images/Carousel/nt.jpg";
+import on from "public/images/Carousel/on.jpg";
+import sy1 from "public/images/Carousel/sy1.png";
+import pa from "public/images/Carousel/pa.jpg";
+import pa2 from "public/images/Carousel/pa2.jpg";
+import sy from "public/images/Carousel/sy.jpg";
 
-const slides = [ml1, DL1, GenAI, DL2, DL3, html_css_js, js_libs];
+
+// const slides = [ml1, DL1, GenAI, DL2, DL3, html_css_js, js_libs];
+const slides =[bcaa, c4, dx, gat, gnc2, gnc1, kl, mp, nt, on, sy1, pa, pa2, sy];
+
 
 const Carousel = () => {
   return (
@@ -58,7 +75,7 @@ const Carousel = () => {
       <div className="flex w-full animate-scroll-left space-x-6">
         {/* Duplicate slides for smooth looping */}
         {[...slides, ...slides].map((image, index) => (
-          <div key={index} className="relative h-48 w-80 flex-shrink-0">
+          <div key={index} className="relative h-96 w-80 flex-shrink-0">
             <Image
               src={image}
               alt={`Slide ${index}`}
