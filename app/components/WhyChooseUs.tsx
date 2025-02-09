@@ -1,3 +1,4 @@
+'use client'
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -6,6 +7,7 @@ import loc from "public/images/whychooseus/location_map.png";
 import supplement from "public/images/whychooseus/supplement.png";
 import grid3 from "public/images/whychooseus/grid-3.png";
 import grid1 from "public/images/whychooseus/grid-1.png";
+import fast_delivery from "public/images/whychooseus/fast-delivery.png";
 
 
 function WhyChooseUs() {
@@ -16,12 +18,23 @@ function WhyChooseUs() {
     >
       <div className="shadow-lg bg-blu/50   bg-[50%] bg-cover bg-no-repeat lg:h-[16rem] py-8 px-12 flex flex-col lg:flex-row items-center gap-8 text-center lg:text-left lg:gap-32">
         <h1 className="text-black font-bold text-2xl lg:text-4xl lg:w-[42rem] lg:leading-snug">
-          We  Always Provide  Best Fitness Suppliments For You
+          We  Always Provide  Best Fitness Supplements For You
         </h1>
         <Link
+            href="#SupplementsSection"
+            onClick={(e) => {
+              e.preventDefault();
+              const section = document.querySelector("#SupplementsSection");
+              if (section) {
+                section.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
+            className="relative flex items-center gap-2 bg-white text-black font-bold px-8 py-4 after:h-[3.5rem] after:absolute after:w-[13rem] after:duration-300 after:ease-linear after:border after:border-[hsla(0,0%,100%,.362)] after:-top-3 after:-right-3 hover:after:top-0 hover:after:right-0"
+          >
+        {/* <Link
           href="/"
           className="relative flex items-center gap-2 bg-white text-black font-bold px-8 py-4 after:h-[3.5rem] after:absolute after:w-[13rem] after:duration-300 after:ease-linear after:border after:border-[hsla(0,0%,100%,.362)] after:-top-3 after:-right-3 hover:after:top-0 hover:after:right-0"
-        >
+        > */}
           <span>ORDER NOW </span>
           <span className="text-[#FF0336]">
             <i className="fa-solid fa-arrow-right undefined"></i>
@@ -68,7 +81,7 @@ function WhyChooseUs() {
             </div>
             <div className="flex items-center gap-4">
               <Image
-                src={loc}
+                src={fast_delivery}
                 alt="Modern Gym Equipments"
                 width={70}
                 height={70}

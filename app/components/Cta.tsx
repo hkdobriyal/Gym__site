@@ -1,3 +1,4 @@
+'use client'
 import Link from "next/link";
 import React from "react";
 import bg from "public/images/cta/bg.jpg";
@@ -12,13 +13,24 @@ function Cta() {
           <h1 className="text-4xl">Need Genuine Supplements?</h1>
           <h3 className="text-2xl flex items-center gap-2">
             <span className="text-[#ff0336]">Call:</span>
-            <span>+91 8686545253</span>
+            <span>+91 9999596220</span>
           </h3>
           <div>
-            <Link
+            {/* <Link
               href="/"
               className="relative text-white flex items-center gap-2 bg-blu font-bold px-6 py-4 after:h-[3.5rem] after:absolute after:w-[13.25rem] after:duration-300 after:ease-linear after:border after:border-blu after:-top-3 after:-right-3 hover:after:top-0 hover:after:right-0 mt-6 w-fit"
-            >
+            > */}
+             <Link
+            href="#SupplementsSection"
+            onClick={(e) => {
+              e.preventDefault();
+              const section = document.querySelector("#SupplementsSection");
+              if (section) {
+                section.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
+               className="relative text-white flex items-center gap-2 bg-blu font-bold px-6 py-4 after:h-[3.5rem] after:absolute after:w-[13.25rem] after:duration-300 after:ease-linear after:border after:border-blu after:-top-3 after:-right-3 hover:after:top-0 hover:after:right-0 mt-6 w-fit"
+          >
               <span>PLACE ORDER NOW</span>
               <span>
                 <i className="fa-solid fa-arrow-right undefined"></i>

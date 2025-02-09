@@ -12,7 +12,7 @@ import PricingChart from "./components/PricingChart";
 import Sponsors from "./components/Sponsors";
 import WhoWeAre from "./components/WhoWeAre";
 import WhyChooseUs from "./components/WhyChooseUs";
-
+import  ProteinProducts from "./components/ProteinProducts" 
 export default function Home() {
   return (
     <main>
@@ -22,6 +22,7 @@ export default function Home() {
       <Cards />
       <WhyChooseUs />
       {/* <GymTrainers /> */}
+      <ProteinProducts />
       <Sponsors />
       <Cta />
       <Footer />
