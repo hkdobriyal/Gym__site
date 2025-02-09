@@ -253,6 +253,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Footer from "../../components/Footer";
 import { Metadata } from "next";
+import { notFound } from "next/navigation";
 
 const allSupplements :Record<
 string,
@@ -686,117 +687,29 @@ string,
   ],
 };
 
-// export default function CategoryPage({
-//   params,
-// }: {
-//   params: { category: string };
-// }) {
-//   const category = params.category.toLowerCase();
-//   const supplements = allSupplements[category];
+// ✅ Fix: Define Static Paths for Build
+export async function generateStaticParams() {
+  return Object.keys(allSupplements).map((category) => ({ category }));
+}
 
-//   if (!supplements) {
-//     return (
-//       <div className="w-full min-h-screen flex flex-col items-center justify-center">
-//         <h1 className="text-2xl font-bold text-red-600">Category Not Found</h1>
-//         <p className="text-gray-500 mt-2">
-//           Oops! The category you are looking for does not exist.
-//         </p>
-//         <Link
-//           href="/"
-//           className="mt-4 px-6 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-700"
-//         >
-//           Back to Home
-//         </Link>
-//       </div>
-//     );
-//   }
+// ✅ Fix: Add Metadata for SEO
+export async function generateMetadata({ params }: CategoryPageProps): Promise<Metadata> {
+  return {
+    title: `Supplements - ${params.category.replace("-", " ")}`,
+    description: `Find the best supplements for ${params.category}. Buy premium products with great discounts.`,
+  };
+}
 
-//   return (
-//     <div>
-//       <section className="w-full px-4 py-8">
-//         <h2 className="text-2xl font-bold text-center mb-6">
-//           {category.replace("-", " ").toUpperCase()}
-//         </h2>
-
-//         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-//           {supplements.map((product) => (
-//             <div
-//               key={product.id}
-//               className="w-[220px] h-[330px] flex flex-col justify-between border rounded-lg shadow-md p-4 bg-white transition-transform duration-300 transform hover:scale-105 hover:shadow-xl relative"
-//             >
-//               {/* Product Image Container */}
-//               <div className="relative w-full h-36 flex items-center justify-center">
-//                 {/* Discount Tag - Positioned on top of the image */}
-//                 <span className="absolute top-2 left-2 bg-green-600 text-white text-xs px-2 py-1 rounded shadow-lg z-10">
-//                   {/* {product.discount} */}
-//                   Upto {product.discount} OFF
-//                 </span>
-//                 <Image
-//                   src={product.image}
-//                   alt={product.name}
-//                   width={140}
-//                   height={140}
-//                   className="object-contain"
-//                 />
-//               </div>
-
-//               {/* Product Name */}
-//               <h3 className="text-sm font-semibold text-center mt-2">
-//                 {product.name}
-//               </h3>
-
-//               {/* Pricing (Old Price Strike-through + New Price) */}
-//               <div className="text-center">
-//                 <p className="text-lg font-bold text-green-700">
-//                   {product.price}
-//                 </p>
-//                 <p className="text-sm text-gray-500 line-through">
-//                   {product.oldPrice}
-//                 </p>
-//               </div>
-//             </div>
-//           ))}
-//         </div>
-
-//         <div className="text-center mt-6">
-//           <Link
-//             href="/"
-//             className="inline-block bg-blue-500 text-white px-6 py-2 rounded-full font-semibold hover:bg-blue-700 transition"
-//           >
-//             Back to Home
-//           </Link>
-//         </div>
-//       </section>
-//       <Footer />
-//     </div>
-//   );
-// }
-
-// ✅ Fix: Explicitly define the expected type for `params`
 interface CategoryPageProps {
   params: { category: string };
 }
 
-// ✅ Fix: Ensure `params.category` is safely accessed
 export default function CategoryPage({ params }: CategoryPageProps) {
   const category = params?.category?.toLowerCase() || "";
   const supplements = allSupplements[category];
 
   if (!supplements) {
-    return (
-      <div className="w-full min-h-screen flex flex-col items-center justify-center">
-        <h1 className="text-2xl font-bold text-red-600">Category Not Found</h1>
-        <p className="text-gray-500 mt-2">
-          Oops! The category you are looking for does not exist.
-        </p>
-        <Link
-          href="/"
-          className="mt-4 px-6 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-700"
-        >
-          Back to Home
-        </Link>
-      </div>
-    );
+    notFound();
   }
 
   return (
@@ -849,12 +762,4 @@ export default function CategoryPage({ params }: CategoryPageProps) {
       <Footer />
     </div>
   );
-}
-
-// ✅ Fix: Add `generateMetadata` if using Next.js 15 dynamic routing
-export async function generateMetadata({ params }: CategoryPageProps): Promise<Metadata> {
-  return {
-    title: `Supplements - ${params.category.replace("-", " ")}`,
-    description: `Find the best supplements for ${params.category}.`,
-  };
 }
