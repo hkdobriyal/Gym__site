@@ -251,7 +251,10 @@ import Image from "next/image";
 import Link from "next/link";
 import Footer from "../../components/Footer";
 
-const allSupplements = {
+const allSupplements :Record<
+string,
+{ id: number; name: string; oldPrice: string; price: string; discount: string; image: string }[]
+> = {
   "whey-protein": [
     {
       id: 1,
