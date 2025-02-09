@@ -4,7 +4,7 @@ import MobileNavbar from "../components/MobileNavbar";
 import AboutSidebar from "../components/AboutSidebar";
 import Banner from "../components/Banner";
 import Footer from "../components/Footer";
-import FeaturedClass from "../components/FeaturedClass";
+// import FeaturedClass from "../components/FeaturedClass";
 
 function page() {
   return (
@@ -13,7 +13,7 @@ function page() {
       <MobileNavbar />
       <AboutSidebar />
       <Banner page="Classes" />
-      <FeaturedClass />
+      {/* <FeaturedClass /> */}
       <Footer />
     </main>
   );
