@@ -376,12 +376,17 @@ function Header() {
   return (
     <section id="header">
       <header
-        className={`w-full text-white font-bold flex justify-between items-center py-3 px-8 fixed top-0 left-0 z-50 transition-all duration-300 ${
+        // className={`w-full text-white font-bold flex justify-between items-center py-3 px-8 fixed top-0 left-0 z-50 transition-all duration-300 ${
+        //   isSticky
+        //     ? "bg-black shadow-lg"
+        //     : "bg-gradient-to-b from-black via-gray-900 to-transparent"
+        // }`}
+        className={`w-full text-black font-bold flex justify-between items-center py-3 px-8 fixed top-0 left-0 z-50 transition-all duration-300 ${
           isSticky
-            ? "bg-black shadow-lg"
-            : "bg-gradient-to-b from-black via-gray-900 to-transparent"
+            ? "bg-blu/90 shadow-lg"
+            : "bg-gradient-to-b from-blu via-blu/50 to-transparent"
         }`}
-      >
+>
         {/* Logo with Hover Animation */}
         <div>
           <Link href="/">
@@ -399,12 +404,22 @@ function Header() {
 
         {/* Navigation Links */}
         <div className="hidden lg:flex items-center gap-8">
-          {["Home", "About", "Contact"].map((item) => (
+        <Link href="/"
+         className={`relative text-lg uppercase tracking-wide hover:text-white transition-all duration-300 ease-in-out
+            text-black "
+         }`}
+       >        
+             <motion.div whileHover={{ y: -3 }}>
+             home
+            </motion.div>
+          </Link>
+
+          {[ "About", "Contact"].map((item) => (
             <motion.div whileHover={{ y: -3 }} key={item}>
               <Link
                 href={`/${item.toLowerCase()}`}
-                className={`relative text-lg uppercase tracking-wide hover:text-blu transition-all duration-300 ease-in-out ${
-                  usePathname() === `/${item.toLowerCase()}` ? "text-blu" : ""
+                className={`relative text-lg uppercase tracking-wide hover:text-white transition-all duration-300 ease-in-out ${
+                  usePathname() === `/${item.toLowerCase()}` ? "text-white" : ""
                 }`}
               >
                 {item}
@@ -418,7 +433,7 @@ function Header() {
             onMouseEnter={() => setIsShopOpen(true)}
             onMouseLeave={() => setIsShopOpen(false)}
           >
-            <button className="hover:text-blu text-lg uppercase flex items-center gap-2 transition-all duration-300 ease-in-out">
+            <button className="hover:text-white text-lg uppercase flex items-center gap-2 transition-all duration-300 ease-in-out">
               Shop <i className="fa-solid fa-chevron-down"></i>
             </button>
 
@@ -482,14 +497,14 @@ function Header() {
           <Link href="/wishlist" className="relative">
             <motion.button
               whileHover={{ scale: 1.1 }}
-              className="text-2xl hover:text-blu ease-in duration-200"
+              className="text-2xl hover:text-white ease-in duration-200"
             >
               <FavoriteBorderIcon fontSize="medium" />
             </motion.button>
             <motion.span
               animate={{ scale: [1, 1.3, 1] }}
               transition={{ repeat: Infinity, duration: 1.2 }}
-              className="absolute top-0 right-[-6px] bg-red-500 text-xs text-white rounded-full px-2"
+              className="absolute top-0 right-[-18px] bg-red-500 text-xs text-white rounded-full px-2"
             >
               3
             </motion.span>
@@ -499,14 +514,14 @@ function Header() {
           <Link href="/cart" className="relative">
             <motion.button
               whileHover={{ scale: 1.1 }}
-              className="text-2xl hover:text-blu ease-in duration-200"
+              className="text-2xl hover:text-white ease-in duration-200"
             >
               <ShoppingCartIcon fontSize="medium" />
             </motion.button>
             <motion.span
               animate={{ scale: [1, 1.3, 1] }}
               transition={{ repeat: Infinity, duration: 1.2 }}
-              className="absolute top-0 right-[-6px] bg-red-500 text-xs text-white rounded-full px-2"
+              className="absolute top-0 right-[-18px] bg-red-500 text-xs text-white rounded-full px-2"
             >
               2
             </motion.span>
@@ -516,13 +531,13 @@ function Header() {
           <motion.button
             onClick={() => setMobileNavbar(true)}
             whileHover={{ scale: 1.1 }}
-            className="text-2xl hover:text-blu ease-in duration-200 lg:hidden"
+            className="text-2xl hover:text-white ease-in duration-200 lg:hidden"
           >
             <i className="fa-solid fa-bars"></i>
           </motion.button>
 
           {/* User Register/Login */}
-          <Link href="/register" className="relative text-2xl hover:text-blu ease-in duration-200">
+          <Link href="/register" className="relative text-2xl hover:text-white ease-in duration-200">
             <i className="fa-regular fa-user"></i>
             <motion.span
               animate={{ scale: [1, 1.4, 1] }}

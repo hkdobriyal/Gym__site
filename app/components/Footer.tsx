@@ -160,7 +160,8 @@ function Footer() {
   return (
     <section
       id="footer"
-      className="bg-gradient-to-b from-gray-900 via-black to-gray-800 text-white py-10"
+      // className="bg-gradient-to-b from-gray-900 via-black to-gray-800 text-white py-10"
+      className="bg-gradient-to-b from-gray-700 via-gray-600 to-gray-500 text-white py-10"
     >
       <footer className="px-6 py-12 lg:py-20 text-center flex flex-col lg:flex-row lg:text-left gap-12 lg:justify-between lg:px-32 relative z-10">
         {/* Left Section - Logo & Social Links */}
@@ -249,12 +250,12 @@ function Footer() {
       </footer>
 
       {/* Sub-Footer Section */}
-      <div className="bg-gray-800 text-gray-300 text-center py-4 absolute  left-0 right-0">
+      <div className="bg-gray-600 text-gray-300 text-center py-4 absolute  left-0 right-0">
         <p className="font-semibold text-sm sm:text-base">
           © {year}{" "}
           <Link
             href="/"
-            className="text-[#ff0336] hover:text-[#ff4d6d] transition-all duration-300"
+            className="text-blu/60 hover:text-blu transition-all duration-300"
           >
             MuscleAndHealth
           </Link>{" "}

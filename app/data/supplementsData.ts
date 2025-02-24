@@ -1,5 +1,5 @@
 // app\data\supplementsData.ts
-const allSupplements :Record<
+export  const allSupplements :Record<
 string,
 { id: number; name: string; oldPrice: string; price: string; discount: string; image: string }[]
 > = {
@@ -433,4 +433,4 @@ string,
 };
 
 
-export default allSupplements;
+// export default allSupplements;
