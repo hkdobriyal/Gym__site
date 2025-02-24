@@ -550,7 +550,7 @@
 // export default Header;
 
 
-
+// Gym__site\app\components\Header.tsx
 "use client";
 
 import Image from "next/image";
@@ -748,6 +748,14 @@ function Header() {
           >
             <i className="fa-solid fa-bars"></i>
           </motion.button>
+          <Link href="/register" className="relative text-2xl hover:text-blu ease-in duration-200">
+        <i className="fa-regular fa-user"></i>
+             <motion.span
+              animate={{ scale: [1, 1.4, 1] }}
+              transition={{ repeat: Infinity, duration: 1 }}
+              className="absolute top-0 right-[-6px] w-2 h-2 bg-red-500 rounded-full"
+            ></motion.span>
+          </Link>
         </div>
       </header>
     </section>
