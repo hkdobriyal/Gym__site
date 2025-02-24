@@ -1,5 +1,5 @@
 // import AboutSidebar from "./components/AboutSidebar";
-import Bmi from "./components/Bmi";
+// import Bmi from "./components/Bmi";
 import Cta from "./components/Cta";
 // import FeaturedClass from "./components/FeaturedClass";
 import Footer from "./components/Footer";
@@ -12,6 +12,7 @@ import MobileNavbar from "./components/MobileNavbar";
 import Sponsors from "./components/Sponsors";
 import WhoWeAre from "./components/WhoWeAre";
 import WhyChooseUs from "./components/WhyChooseUs";
+
 import  ProteinProducts from "./components/ProteinProducts" 
 export default function Home() {
   return (

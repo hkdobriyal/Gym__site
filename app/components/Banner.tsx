@@ -1,3 +1,4 @@
+// Gym__website\app\components\Banner.tsx
 import React from "react";
 
 function Banner({ page }: { page: string }) {
