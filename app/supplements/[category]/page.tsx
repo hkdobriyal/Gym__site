@@ -624,10 +624,12 @@ export default function CategoryPage({ params }: CategoryPageProps) {
       <section className="w-full px-4 py-8 pt-28">
         <h2 className="text-2xl font-bold text-center mb-6">
           {category.replace("-", " ").toUpperCase()}
-        </h2>
+        </h2>  
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
           {supplements.map((product) => (
+               <Link
+               href={`/supplements/${category}/${encodeURIComponent(product.name)}`}>
             <div
               key={product.id}
               className="w-[220px] h-[370px] flex flex-col justify-between border rounded-lg shadow-md p-4 bg-white transition-transform duration-300 transform hover:scale-105 hover:shadow-xl relative"
@@ -712,6 +714,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                 </button>
               )}
             </div>
+            </Link>
           ))}
         </div>
 
