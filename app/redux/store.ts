@@ -1,11 +1,10 @@
-// "use client";
-
+// // Gym__site\app\redux\store.ts
 // import { configureStore } from "@reduxjs/toolkit";
 // import cartReducer from "./slices/cartSlice";
 
 // export const store = configureStore({
 //   reducer: {
-//     cart: cartReducer,
+//     cart: cartReducer, // ✅ Add your cart slice
 //   },
 // });
 
@@ -13,12 +12,16 @@
 // export type AppDispatch = typeof store.dispatch;
 
 
+
+// Gym__site\app\redux\store.ts
 import { configureStore } from "@reduxjs/toolkit";
 import cartReducer from "./slices/cartSlice";
+import authReducer from "./slices/authSlice"; // ✅ Added authSlice
 
 export const store = configureStore({
   reducer: {
-    cart: cartReducer, // ✅ Add your cart slice
+    cart: cartReducer,
+    auth: authReducer, // ✅ Added auth reducer
   },
 });
 
